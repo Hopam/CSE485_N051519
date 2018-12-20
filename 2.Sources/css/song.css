@@ -1,0 +1,61 @@
+.hopam{
+    color:red;
+    cursor:pointer;
+}
+.hopam:hover{
+    color:gray;
+}
+.image-ha{
+    width:180px;
+    height:200px;
+    padding-top:20px;
+}
+.new-song{
+    position:absolute;
+    width:450px;
+}
+.ha-content{
+    margin-top:60px;
+    height:400px;
+    padding:20px;
+    text-align:justify;
+    overflow:scroll;
+}
+.info{
+    background:#FAE9C0;
+    padding:15px;
+    margin:40px 0 40px 0;
+    border:1px dashed gray;
+}
+#name-song{
+    width:100%;
+    text-align:left;
+    padding:10px 0 20px 0px;
+}
+#singer{
+    width:200px;
+    height:28px;
+    background-color:#C2FCEA;
+    float:left;
+    padding:5px;
+    text-align:center;
+    border-radius:10px;
+}
+.flag{
+    width:40px;
+    height:20px;
+    vertical-align:middle;
+    margin:0 10px 0 10px;
+}
+#nguoi_dang{
+    float:right;
+    vertical-align:middle;
+    padding-right:20px;
+}
+#bottom-content{
+    margin:40px;
+    padding: 20px;
+    float:bottom;
+    position: relative;
+    border:1px dashed gray;
+}
