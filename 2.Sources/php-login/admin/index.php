@@ -15,7 +15,7 @@ include_once "../config/core.php";
 include_once "login_checker.php";
  
 // set page title
-$page_title="Admin Index";
+$page_title="Thông tin quản lý";
  
 // include page header HTML
 include 'layout_head.php';
@@ -33,13 +33,14 @@ include 'layout_head.php';
         }
  
         else if($action=='logged_in_as_admin'){
-            echo "<div class='alert alert-info'>";
-                echo "<strong>You</strong> are logged in as admin.";
-            echo "</div>";
+            // echo "<div class='alert alert-info'>";
+            //     echo "<strong>Bạn</strong> vừa đăng nhập vào trang quản lý.";
+            // echo "</div>";
         }
  
         echo "<div class='alert alert-info'>";
-            echo "Contents of your admin section will be here.";
+            echo "Chủ sở hữu : <br/>";
+            echo "<ol><li> Nguyễn Thanh Hải - 58TH2 .</li><li> Lăng Đại Dương - 58TH2 . <ol>";
         echo "</div>";
  
     echo "</div>";

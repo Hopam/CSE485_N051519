@@ -8,8 +8,8 @@
     <link rel="stylesheet" type="text/css" href="../css/login.css">
     <link rel="stylesheet" type="text/css" href="../Bootstrap/css/bootstrap.min.css.map"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"crossorigin="anonymous">
-    <script type="text/javascript" src="../Bootstrap/js/bootstrap.min.js.map"></script>
     <script type="text/javascript" src="../js/habh.js"></script> 
+    <link href="<?php echo $home_url . "libs/css/customer.css" ?>" rel="stylesheet" />
 </head>
 <body>
 <div id="top-nav-bar">        
@@ -29,8 +29,8 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && $_SESSION['a
     ?>
      <div id="right-bar" class="nav navbar-nav navbar-right" style="margin-right:20px">
         <?php echo $page_title=="Edit Profile" ? "class='active'" : ""; ?>
-            <a href="../Add-song/addsong.php"title="Đăng bài hát" title="Đăng bài hát" class="btn"> <i class="fas fa-plus"> </i> Đăng bài hát</a>
-            <a href="login.php" title="Đăng nhập" class="btn"><i class="fas fa-user"></i>    Đăng nhập</a>
+            <a href="../Song/Addsong/addsong.php"title="Đăng bài hát" title="Đăng bài hát" class="btn"> <i class="fas fa-plus"> </i> Đăng bài hát</a>
+            <!-- <a href="login.php" title="Đăng nhập" class="btn"><i class="fas fa-user"></i>    Đăng nhập</a> -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                 <!-- <span class="glyphicon glyphicon-user" aria-hidden="true"></span> -->
             <img id="icon" src="images/login-icon.png"/>  <?php echo $_SESSION['firstname']; ?>
@@ -53,7 +53,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && $_SESSION['a
                 </div>
             </div>  	
         </div>
-        <br/><br/><br/>
+        <br/><br/>
 
    
 
@@ -62,7 +62,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && $_SESSION['a
     else{
         ?>
         <div id="right-bar">    
-                    <a href="../Add-song/addsong.php" title="Đăng bài hát" class="btn"><i class="fas fa-plus"> </i> Đăng bài hát</a>
+                    <a href="../Song/Addsong/addsong.php" title="Đăng bài hát" class="btn"><i class="fas fa-plus"> </i> Đăng bài hát</a>
                    	<a href="../php-login/login.php" title="Đăng nhập" class="btn"><i class="fas fa-user"></i> Đăng nhập</a>
                     <a href="../php-login/register.php" title="Đăng ký" class="btn"><i class="fas fa-user"></i> Đăng ký</a>
                 </div>            
@@ -101,7 +101,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && $_SESSION['a
 	cursor: pointer;
 }
 a{
-    color:white;
+    color:black;
 }
 #icon{
     width:25px;
@@ -109,6 +109,54 @@ a{
     margin-top:-5px;
 }
 </style>
-        
+            <?php
+if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && $_SESSION['access_level']=='Customer'){
+    ?>
+    <!-- navbar
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container-fluid">
+ 
+        <div class="navbar-header">
+            <!-- to enable navigation dropdown when viewed in mobile device -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+ 
+            <!-- Change "Site Admin" to your site name -->
+            <!-- <a  class="navbar-brand" href="<?php echo $home_url; ?>admin/index.php">Admin</a> -->
+        </div>
+ 
+        <div class="navbar-collapse collapse" style="padding-left:80px">
+            <ul class="nav navbar-nav">
+ 
+ 
+                <!-- highlight for order related pages -->
+                <li <?php echo $page_title=="Customer Index" ? "class='active'" : ""; ?>>
+                    <a href="<?php echo $home_url; ?>index.php">Thông tin chung</a>
+                </li>
+ 
+                <!-- highlight for user related pages -->
+                <li <?php
+                        echo $page_title=="Users" ? "class='active'" : ""; ?> >
+                    <a href="../Song/Da_dang/read_song.php">Bài hát đã đăng</a>
+                </li>
+                <li <?php
+                        echo $page_title=="Users" ? "class='active'" : ""; ?> >
+                    <a href="#">Playlist</a>
+                </li>
+            </ul>
+ 
+            <!--  -->
+        </div><!--/.nav-collapse -->
+ 
+    </div>
+</div> 
+<!-- /navbar -->
+<?php
+        }
+                ?>
 </body>
 </html>

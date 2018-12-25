@@ -16,7 +16,6 @@ $page_title = "Reset Password";
  
 // include login checker
 include_once "login_checker.php";
- 
 // include classes
 include_once "config/database.php";
 include_once "objects/user.php";

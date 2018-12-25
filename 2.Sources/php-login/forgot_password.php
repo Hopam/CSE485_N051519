@@ -32,7 +32,7 @@ $utils = new Utils();
  
 // include page header HTML
 include_once "layout_head.php";
- 
+// include_once "libs/PHPMailer/index.php";
 // post code will be here
 // if the login form was submitted
 if($_POST){
@@ -52,19 +52,20 @@ if($_POST){
  
                 // send reset link
                 $body="Hi there.<br /><br />";
-                $body.="Please click the following link to reset your password: {$home_url}reset_password/?access_code={$access_code}";
+                $body.="Please click the following link to reset your password: {$home_url}reset_password.php/?access_code={$access_code}";
                 $subject="Reset Password";
                 $send_to_email=$_POST['email'];
+                include_once "libs/PHPMailer/index.php";
  
-                if($utils->sendEmailViaPhpMail($send_to_email, $subject, $body)){
-                    echo "<div class='alert alert-info'>
-                            Password reset link was sent to your email.
-                            Click that link to reset your password.
-                        </div>";
-                }
+                // if($utils->sendEmailViaPhpMail($send_to_email, $subject, $body)){
+                //     echo "<div class='alert alert-info'>
+                //             Password reset link was sent to your email.
+                //             Click that link to reset your password.
+                //         </div>";
+                // }
  
-                // message if unable to send email for password reset link
-                else{ echo "<div class='alert alert-danger'>ERROR: Unable to send reset link.</div>"; }
+                // // message if unable to send email for password reset link
+                // else{ echo "<div class='alert alert-danger'>ERROR: Unable to send reset link.</div>"; }
             }
  
             // message if unable to update access code

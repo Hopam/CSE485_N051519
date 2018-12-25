@@ -10,7 +10,7 @@
     <title><?php echo isset($page_title) ? strip_tags($page_title) : "Store Front"; ?></title>
  
     <!-- Bootstrap CSS -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+    <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
  
     <!-- admin custom CSS -->
     <link href="<?php echo $home_url . "libs/css/customer.css" ?>" rel="stylesheet" />
@@ -26,11 +26,12 @@
         <?php
         {
         ?>
-        <div class='col-md-12'>
+        <!-- <div class='col-md-12'> -->
             <div class="page-header">
                 <h1><?php echo isset($page_title) ? $page_title : "The Code of a Ninja"; ?></h1>
+                
             </div>
-        </div>
+        <!-- </div> -->
         <?php
         }
         ?>

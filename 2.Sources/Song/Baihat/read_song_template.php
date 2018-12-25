@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
@@ -15,11 +15,15 @@ if($num>0){
  
     // table headers
     echo "<tr>";
-        echo "<th>Firstname</th>";
-        echo "<th>Lastname</th>";
-        echo "<th>Email</th>";
-        echo "<th>Contact Number</th>";
-        echo "<th>Access Level</th>";
+        echo "<th>STT</th>";
+        echo "<th>Tên bài hát</th>";
+        echo "<th>Ca sĩ</th>";
+        echo "<th>Tác giả</th>";
+        echo "<th>Thể loại</th>";
+        echo "<th>Điệu bài hát</th>";
+        echo "<th>Cập nhật</th>";
+        echo "<th>Người đăng</th>";
+        echo "<th>Lượt xem</th>";
     echo "</tr>";
  
     // loop through the user records
@@ -28,17 +32,21 @@ if($num>0){
  
         // display user details
         echo "<tr>";
-            echo "<td>{$firstname}</td>";
-            echo "<td>{$lastname}</td>";
-            echo "<td>{$email}</td>";
-            echo "<td>{$contact_number}</td>";
-            echo "<td>{$access_level}</td>";
+            echo "<td>{$Mabh}</td>";
+            echo "<td>{$Tenbh}</td>";
+            echo "<td>{$CaSi}</td>";
+            echo "<td>{$TacGia}</td>";
+            echo "<td>{$TheLoai}</td>";
+            echo "<td>{$Dieubh}</td>";
+            echo "<td>{$CapNhat}</td>";
+            echo "<td>{$NguoiDang}</td>";
+            echo "<td>{$LuotXem}</td>";
         echo "</tr>";
         }
  
     echo "</table>";
  
-    $page_url="read_users.php?";
+    $page_url="read_song.php?";
     $total_rows = $user->countAll();
  
     // actual paging buttons

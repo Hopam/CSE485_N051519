@@ -186,6 +186,36 @@ a:hover{
 	cursor:pointer;
 	border-radius:10px;
 }
+.hopam{
+    color:red;
+    cursor:pointer;
+}
+.hopam:hover{
+    color:gray;
+}
+a{
+    text-decoration:none;
+}
+#left-content-down{
+    float:left;
+    width:56%;
+	height:100%;
+	background-color:white;
+	border:1px solid #ddd;
+	position:relative;
+	margin-top:50px;
+	border-radius: 10px;
+}
+#right-content-body{
+    padding:40px 40px 0 40px;
+    text-align:justify;
+    overflow:scroll;
+    height:400px;
+    margin-top:60px;
+}
+.new-song{
+    position:absolute;
+}
 
 
 

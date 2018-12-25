@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="../Bootstrap/css/bootstrap.min.css" /> 
-    <link rel="stylesheet" type="text/css" href="../css/addsong.css"/>
+    <link rel="stylesheet" type="text/css" href="../../Bootstrap/css/bootstrap.min.css" /> 
+    <link rel="stylesheet" type="text/css" href="../../css/addsong.css"/>
     <title>Đăng bài hát</title>
 </head>
 <body>
 <?php
 // core configuration
-include_once "config/core.php";
- 
+include_once "../config/core.php";
+include_once "login_checker.php";
 // set page title
 $page_title = "Đăng bài hát";
  
 // include login checker
  
 // include classes
-include_once 'config/database.php';
-include_once 'objects/user.php';
-include_once "libs/php/utils.php";
- 
+include_once '../config/database.php';
+include_once '../objects/user.php';
+include_once "layout_head.php";
+// include_once "libs/php/utils.php";
 // include page header HTML
  
  
@@ -37,15 +37,49 @@ if($_POST){
  
     // initialize objects
     $user = new User($db);
-    $utils = new Utils();
- 
+    // $utils = new Utils();
+    $stmt = $user->TenbhExists();
+    $stmt = $user->create();
+
     // set user email to detect if it already exists
+    $user->Tenbh=$_POST['Tenbh'];
+
+    // check if email already exists
+    if($user->TenbhExists()){
+        echo "<div class='alert alert-danger'>";
+            echo "The song you specified is already added. Please try again or <a href='addsong.php'></a>";
+        echo "</div>";
+    }
+
+    else{
+        $user->Tenbh=$_POST['Tenbh'];
+        $user->Loibh=$_POST['Loibh'];
+        $user->TacGia=$_POST['TacGia'];
+        $user->TheLoai=$_POST['TheLoai'];
+        $user->CaSi=$_POST['CaSi'];
+        $user->Tone=$_POST['Tone'];
+        $user->Link=$_POST['Link'];
+        $user->Dieubh='Ballad';
+        $user->Capo=0;
+        $user->NguoiDang= $_SESSION['firstname'];
+        $user->LuotXem=0;
+ 
+// create the user
+if($user->create()){
+
+        echo "<div class='alert alert-success'>
+            The song you specified is already added.
+        </div>";
+
+ 
+}else{
+    echo "<div class='alert alert-danger' role='alert'>Unable to addsong. Please try again.</div>";
 }
+    }
+}
+
 ?>
-<?php
-$page_title = "Đăng bài hát";
-include_once 'layout_head.php';
-?>
+
 <form action='addsong.php' method='post' id='addsong'>
  
     <table class='table table-responsive'>
@@ -53,16 +87,16 @@ include_once 'layout_head.php';
         <tr>
             <td class='width-30-percent'></td>
             <td></td><div id="page-content">
-    <div class="container">
+    <!-- <div class="container"> -->
         <div class="col-md-7">
             <div class="red">
                             </div>
-            <form id="song-create-form" action="" method="post" class="col-md-12">
+            <form id="song-create-form" action="addsong.php" method="post" class="col-md-12">
                 <label for="song-name">
                     Tên bài hát:
                 </label>
                 <div>
-                <input id="song-name" name="Tenbh" type="text" class="hac-input" autofocus="true" autocomplete="on" placeholder="Ví dụ: Cát Bụi" required value="<?php echo isset($_POST['Tenbh']) ? htmlspecialchars($_POST['Tenbh'], ENT_QUOTES) : "";  ?>" style="width:100%"/>
+                <input  name="Tenbh" type="text" class='form-control' class="hac-input" autofocus="true" autocomplete="off" placeholder="Ví dụ: Cát Bụi" required value="<?php echo isset($_POST['Tenbh']) ? htmlspecialchars($_POST['Tenbh'], ENT_QUOTES) : "";  ?>" style="width:100%">
                 </div>
                 <div id="suggestions"></div>
 
@@ -75,7 +109,7 @@ include_once 'layout_head.php';
                             <i class="fa fa-eye"></i> Xem trước                        </button>
                     </div>
                 </div>
-                <textarea id="song-lyric" name="Loibh" class="hac-input large" rows="10" required style="width: 635px;height: 600px;"><?php echo isset($_POST['Loibh']) ? htmlspecialchars($_POST['Loibh'], ENT_QUOTES) : "";  ?></textarea>
+                <textarea name="Loibh" class='form-control' required class="hac-input large" rows="10" style="width: 635px;height: 600px;"><?php echo isset($_POST['Loibh']) ? htmlspecialchars($_POST['Loibh'], ENT_QUOTES) : "";  ?></textarea>
 
                 <div id="toolbox-bottom">
                     Hợp âm: <span id="chord-list"><span class="search-chord-content"></span></span>
@@ -90,13 +124,13 @@ include_once 'layout_head.php';
                         <label for="song-authors">
                             Tác giả:
                         </label>
-                        <input id="song-authors" type="text" class="hac-input artist-autocomplete ui-autocomplete-input" name="TacGia" placeholder="Ví dụ: Trịnh Công Sơn..." required value="<?php echo isset($_POST['TacGia']) ? htmlspecialchars($_POST['TacGia'], ENT_QUOTES) : "";  ?>" autocomplete="on"/>
+                        <input type="text" class='form-control' class="hac-input artist-autocomplete ui-autocomplete-input" name="TacGia" required placeholder="Ví dụ: Trịnh Công Sơn..." value="<?php echo isset($_POST['TacGia']) ? htmlspecialchars($_POST['TacGia'], ENT_QUOTES) : "";  ?>" autocomplete="off">
                     </div>
                     <div class="col-md-5 ">
                         <label for="song-genres">
                             Thể loại:
                         </label>
-                        <input id="song-genres" type="text" class="genre-autocomplete hac-input ui-autocomplete-input" name="TheLoai" placeholder="Ví dụ: Nhạc trẻ" required value="<?php echo isset($_POST['TheLoai']) ? htmlspecialchars($_POST['TheLoai'], ENT_QUOTES) : "";  ?>" autocomplete="on"/>
+                        <input type="text" class='form-control' class="genre-autocomplete hac-input ui-autocomplete-input" name="TheLoai" required placeholder="Ví dụ: Nhạc trẻ" value="<?php echo isset($_POST['TheLoai']) ? htmlspecialchars($_POST['TheLoai'], ENT_QUOTES) : "";  ?>" autocomplete="off">
                     </div>
                 </div>
                 <div class="clearfix"></div>
@@ -107,19 +141,19 @@ include_once 'layout_head.php';
                         <label>
                         Ca sĩ:
                         </label>
-                        <input id="singer-names" type="text"style="width:100%" name="CaSi" placeholder="Ví dụ: Cẩm Ly, Đan Trường..." required value="<?php echo isset($_POST['CaSi']) ? htmlspecialchars($_POST['CaSi'], ENT_QUOTES) : "";  ?>" autocomplete="on"/>
+                        <input type="text"style="width:100%" class='form-control' name="CaSi" required placeholder="Ví dụ: Cẩm Ly, Đan Trường..." autocomplete="off" value="<?php echo isset($_POST['CaSi']) ? htmlspecialchars($_POST['CaSi'], ENT_QUOTES) : "";  ?>"/>
                         </div>
                         <div class="col-md-2">
                         <label>
                         Tông:
                         </label>
-                        <input id="singer-key" type="text" style="width:100%" name="Tone" placeholder="Ví dụ: Am" required value="<?php echo isset($_POST['Tone']) ? htmlspecialchars($_POST['Tone'], ENT_QUOTES) : "";  ?>" autocomplete="on"/>
+                        <input type="text" style="width:100%" class='form-control' name="Tone" required placeholder="Ví dụ: Am" autocomplete="off" value="<?php echo isset($_POST['Tone']) ? htmlspecialchars($_POST['Tone'], ENT_QUOTES) : "";  ?>">
                         </div>
                         <div class="col-md-5">
                         <label>
                         Link nhạc:
                         </label>
-                        <input id="song-link" type="text" class="hac-input" name="Link" required value="<?php echo isset($_POST['Link']) ? htmlspecialchars($_POST['Link'], ENT_QUOTES) : "";  ?>" autocomplete="on" placeholder="Ví dụ: http://mp3.zing.vn/...">
+                        <input type="text" class="hac-input" class='form-control' name="Link" required placeholder="Ví dụ: http://mp3.zing.vn/..." value="<?php echo isset($_POST['Link']) ? htmlspecialchars($_POST['Link'], ENT_QUOTES) : "";  ?>">
                         </div>
                     </div>
                                 </div>
@@ -132,11 +166,16 @@ include_once 'layout_head.php';
                 <input type="hidden" id="from-request-id" name="from-request-id" value="">
             </form>
         </div>
+</form>        
         <!-- left column (instruction panel) -->
         <div class="col-md-5">
             <div id="instruction-panel" class="instruction-panel" style="transform: translate3d(0px, 0px, 0px);">
                 <div id="instruction-song-name" class="instruction">
                     <h3>Cảm ơn bạn rất nhiều ^_^</h3>
+
+
+
+
 <p>...vì đã đăng hợp âm của bạn lên đây!</p>
 <p>Cộng đồng Guitar Việt Nam cần những người như bạn.</p>
                 </div>
@@ -167,6 +206,7 @@ include_once 'layout_head.php';
     </div>
 
 </div>
+</table>
 <!-- <form action='register.php' method='post' id='register'>
 
 <?php

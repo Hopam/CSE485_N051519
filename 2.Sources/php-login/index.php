@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Thông tin chung</title>
 </head>
 <body>
 
@@ -13,7 +13,7 @@
 include_once "config/core.php";
  
 // set page title
-$page_title="Index";
+$page_title="Thông tin cá nhân";
  
 // include login checker
 $require_login=true;
@@ -43,7 +43,7 @@ echo "<div class='col-md-12'>";
  
     // content once logged in
     echo "<div class='alert alert-info'>";
-        echo "Content when logged in will be here. For example, your premium products or services.";
+        echo "<strong>Thông tin về " . $_SESSION['firstname'] . "</strong>";
     echo "</div>";
  
 echo "</div>";

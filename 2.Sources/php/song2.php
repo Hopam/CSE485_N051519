@@ -68,11 +68,11 @@ include_once('header.php')
                 <div id="bottom-content">
                 <div class="info-song">
             <?php
-$connection = mysqli_connect("localhost", "root", "", "hopambh");
-
+$conn = mysqli_connect("localhost", "root", "", "hopambh");
+mysqli_query ($conn, 'set names UTF8');
 $sql="SELECT * FROM baihat WHERE Mabh='1' ";
 
-$result = mysqli_query($connection, $sql);
+$result = mysqli_query($conn, $sql);
 
 if ($result) {
     // Hàm `mysql_fetch_row()` sẽ chỉ fetch dữ liệu một record mỗi lần được gọi

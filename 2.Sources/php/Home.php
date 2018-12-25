@@ -4,10 +4,11 @@
         <title>Trang chủ - Hợp Âm HD - Website tra cứu hợp âm bài hát</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width:device-width, initial-scare:1">
+        <link rel="stylesheet" type="text/css" href="../css/habh.css">
     </head>
     <body>
     <?php
-        include('header.php');
+include_once 'header.php';
     ?>
 
      

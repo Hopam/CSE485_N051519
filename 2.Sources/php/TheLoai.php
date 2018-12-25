@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Điệu bài hát</title>
+    <title>Thể Loại</title>
 </head>
 <body>
     
@@ -14,16 +14,16 @@
 
     
     <div id="body">
-    	<center><h1>Điệu bài hát</h1></center><br/>
-        <a href="../Song/Dieubh/Ballad.php">
+    	<center><h1>Thể Loại</h1></center><br/>
+        <a href="../Song/TheLoai/NhacTre.php">
         <div style="background-color:#96CBF2" class="box">
-        	<p>Điệu Ballad<br/>
+        	<p>Nhạc Trẻ<br/>
             	<br/>
             	<b>7429 bài</b>
             </p>          
         </div>
         </a>
-        <div style="background-color:#D6DCF5" class="box">
+        <!-- <div style="background-color:#D6DCF5" class="box">
         	<p>Điệu Blues<br/>
             <br/>
             <b>1440 bài</b>
@@ -109,7 +109,7 @@
             	<br/>
             	<b>113 bài</b>
             </p>          
-        </div>
+        </div> -->
 
 </body>
 </html>

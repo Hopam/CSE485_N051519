@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="../css/song.css">
@@ -10,7 +10,7 @@
 <body>
 
 <?php
-include_once('header.php')
+include_once 'header.php';
 ?>
 
         <div id="content">
@@ -84,17 +84,19 @@ include_once('header.php')
                 <div id="bottom-content">
                 <div class="info-song">
             <?php
-$connection = mysqli_connect("localhost", "root", "", "hopambh");
-
+$conn = mysqli_connect("localhost", "root", "", "hopambh");
+mysqli_query ($conn, 'set names UTF8');
 $sql="SELECT * FROM baihat WHERE Mabh='2' ";
 
-$result = mysqli_query($connection, $sql);
+$result = mysqli_query($conn, $sql);
+// mysqli_set_charset($conn, 'UTF8');
+
 
 if ($result) {
     // Hàm `mysql_fetch_row()` sẽ chỉ fetch dữ liệu một record mỗi lần được gọi
     // do đó cần sử dụng vòng lặp While để lặp qua toàn bộ dữ liệu trên bảng posts
     while ($row=mysqli_fetch_row($result)) {
-        printf ("<li>Tác Giả: %s . Thể Loại: %s </li> <li> Điệu Bài hát: %s . Cập Nhật: %s </li> <li> Người Đăng: %s. Lượt Xem: %s <br/></li>",$row[4],$row[5], $row[6], $row[10], $row[11], $row[12]);
+        printf ("<li>Tác Giả: %s  .   Thể Loại: %s </li> <li> Điệu Bài hát: %s . Cập Nhật: %s </li> <li> Người Đăng: %s .  Lượt Xem: %s <br/></li>",$row[4],$row[5], $row[6], $row[10], $row[11], $row[12]);
     }
 
     // Máy tính sẽ lưu kết quả từ việc truy vấn dữ liệu bảng

@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../../css/login.css">
     <link rel="stylesheet" type="text/css" href="../../Bootstrap/css/bootstrap.min.css.map"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"crossorigin="anonymous">
+    <script type="text/javascript" src="../../Bootstrap/js/bootstrap.min.js.map"></script>
     <script type="text/javascript" src="../../js/habh.js"></script>
 </head>
 <body>
@@ -28,7 +29,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && $_SESSION['a
     ?>
      <div id="right-bar" class="nav navbar-nav navbar-right" style="margin-right:20px">
         <?php echo $page_title=="Edit Profile" ? "class='active'" : ""; ?>
-            <a href="../../Song/Addsong/addsong.php"title="Đăng bài hát" title="Đăng bài hát" class="btn"> <i class="fas fa-plus"> </i> Đăng bài hát</a>
+            <a href="../Addsong/addsong.php"title="Đăng bài hát" title="Đăng bài hát" class="btn"> <i class="fas fa-plus"> </i> Đăng bài hát</a>
             <!-- <a href="login.php" title="Đăng nhập" class="btn"><i class="fas fa-user"></i>    Đăng nhập</a> -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                 <!-- <span class="glyphicon glyphicon-user" aria-hidden="true"></span> -->
@@ -46,7 +47,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && $_SESSION['a
                     <a href="#" class="text-item" title="Playlist">Playlist</a>
                     <a href="#" class="text-item" title="Hợp âm">Hợp âm</a>
                     <a href="../../php/Dieubaihat.php" title="Điệu bài hát" class="text-item">Điệu bài hát</a>
-                    <a href="#" class="text-item" title="Thể loại">Thể loại</a>
+                    <a href="../../php/TheLoai.php" class="text-item" title="Thể loại">Thể loại</a>
                     <a href="#" class="text-item" title="Yêu cầu hợp âm">Yêu cầu hợp âm</a>
                     <a href="#" class="text-item" title="Thành viên">Thành viên</a>
                 </div>
@@ -61,18 +62,18 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && $_SESSION['a
     else{
         ?>
         <div id="right-bar">    
-                    <a href="../../Song/Addsong/addsong.php" title="Đăng bài hát" class="btn"><i class="fas fa-plus"> </i> Đăng bài hát</a>
-                   	<a href="../php-login/login.php" title="Đăng nhập" class="btn"><i class="fas fa-user"></i> Đăng nhập</a>
-                    <a href="../php-login/register.php" title="Đăng ký" class="btn"><i class="fas fa-user"></i> Đăng ký</a>
+                    <a href="../Addsong/addsong.php" title="Đăng bài hát" class="btn"><i class="fas fa-plus"> </i> Đăng bài hát</a>
+                   	<a href="../../php-login/login.php" title="Đăng nhập" class="btn"><i class="fas fa-user"></i> Đăng nhập</a>
+                    <a href="../../php-login/register.php" title="Đăng ký" class="btn"><i class="fas fa-user"></i> Đăng ký</a>
                 </div>            
           	</div> 
             <div id="title-bar">
             	<div class="title">
-                	<a href="Home.php" title="Bài hát" class="text-item">Bài hát</a>
+                	<a href="../../php/Home.php" title="Bài hát" class="text-item">Bài hát</a>
                     <a href="#" class="text-item" title="Playlist" >Playlist</a>
                     <a href="#" class="text-item" title="Hợp âm">Hợp âm</a>
-                    <a href="Dieubaihat.php" title="Điệu bài hát" class="text-item">Điệu bài hát</a>
-                    <a href="#" class="text-item" title="Thể loại" >Thể loại</a>
+                    <a href="../../php/Dieubaihat.php" title="Điệu bài hát" class="text-item">Điệu bài hát</a>
+                    <a href="../../php/TheLoai.php" class="text-item" title="Thể loại" >Thể loại</a>
                     <a href="#" class="text-item" title="Yêu cầu hợp âm" >Yêu cầu hợp âm</a>
                     <a href="#" class="text-item" title="Thành viên" >Thành viên</a>
                     
@@ -100,7 +101,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && $_SESSION['a
 	cursor: pointer;
 }
 a{color:black;}
-a:hover{color:gray}
+a:hover{color:gray;}
 #icon{
     width:25px;
     height:25px;
@@ -130,17 +131,17 @@ a:hover{color:gray}
  
                 <!-- highlight for order related pages -->
                 <li <?php echo $page_title=="Admin Index" ? "class='active'" : ""; ?>>
-                    <a href="<?php echo $home_url; ?>admin/index.php">Quản lý</a>
+                    <a href="../../php-login/admin/index.php">Quản lý</a>
                 </li>
  
                 <!-- highlight for user related pages -->
                 <li <?php
                         echo $page_title=="Users" ? "class='active'" : ""; ?> >
-                    <a href="<?php echo $home_url; ?>admin/read_users.php">Người dùng</a>
+                    <a href="../../php-login/admin/read_users.php">Người dùng</a>
                 </li>
                 <li <?php
                         echo $page_title=="Users" ? "class='active'" : ""; ?> >
-                    <a href="../../Song/Baihat/read_song.php">Bài hát</a>
+                    <a href="read_song.php">Bài hát</a>
                 </li>
             </ul>
  

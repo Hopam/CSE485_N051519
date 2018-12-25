@@ -29,24 +29,72 @@ class User{
     public $CapNhat;
     public $NguoiDang;
     public $LuotXem;
- 
+    
     // constructor
     public function __construct($db){
         $this->conn = $db;
     }
-
+    function TenbhExists(){
+ 
+        // query to check if Tenbh exists
+        $query = "SELECT Mabh,Tenbh, Loibh, CaSi, TacGia, TheLoai, Tone,Capo, Link, CapNhat, NguoiDang, LuotXem
+                FROM " . $this->table_name . "
+                WHERE Tenbh = ?
+                LIMIT 0,1";
+     
+        // prepare the query
+        $stmt = $this->conn->prepare( $query );
+     
+        // sanitize
+        $this->Tenbh=htmlspecialchars(strip_tags($this->Tenbh));
+     
+        // bind given email value
+        $stmt->bindParam(1, $this->Tenbh);
+     
+        // execute the query
+        $stmt->execute();
+     
+        // get number of rows
+        $num = $stmt->rowCount();
+     
+        // if email exists, assign values to object properties for easy access and use for php sessions
+        if($num>0){
+     
+            // get record details / values
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+     
+            // assign values to object properties
+            $this->Mabh = $row['Mabh'];
+            $this->Mabh = $row['Tenbh'];
+            $this->Loibh= $row['Loibh'];
+            $this->CaSi = $row['CaSi'];
+            $this->TacGia = $row['TacGia'];
+            $this->TheLoai = $row['TheLoai'];
+            $this->Tone = $row['Tone'];
+            $this->Capo = $row['Capo'];
+            $this->Link = $row['Link'];
+            $this->CapNhat = $row['CapNhat'];
+            $this->NguoiDang= $row['NguoiDang'];
+            $this->LuotXem = $row['LuotXem'];
+     
+            // return true because email exists in the database
+            return true;
+        }
+     
+        // return false if email does not exist in the database
+        return false;
+    }
     
-    // check if given email exist in the database
     
 // create new user record
 function create(){
  
     // to get time stamp for 'created' field
-    $this->created=date('Y-m-d H:i:s');
- 
+    $this->CapNhat=date('Y-m-d H:i:s');
     // insert query
     $query = "INSERT INTO " . $this->table_name . "
             SET
+        Mabh = :Mabh,
         Tenbh = :Tenbh,
         Loibh = :Loibh,
         CaSi = :CaSi,
@@ -64,6 +112,7 @@ function create(){
     $stmt = $this->conn->prepare($query);
  
     // sanitize
+    $this->Mabh=htmlspecialchars(strip_tags($this->Mabh));
     $this->Tenbh=htmlspecialchars(strip_tags($this->Tenbh));
     $this->Loibh=htmlspecialchars(strip_tags($this->Loibh));
     $this->CaSi=htmlspecialchars(strip_tags($this->CaSi));
@@ -78,6 +127,7 @@ function create(){
     $this->LuotXem=htmlspecialchars(strip_tags($this->LuotXem));
  
     // bind the values
+    $stmt->bindParam(':Mabh', $this->Mabh);
     $stmt->bindParam(':Tenbh', $this->Tenbh);
     $stmt->bindParam(':Loibh', $this->Loibh);
     $stmt->bindParam(':CaSi', $this->CaSi);
@@ -90,16 +140,7 @@ function create(){
     $stmt->bindParam(':CapNhat', $this->CapNhat);
     $stmt->bindParam(':NguoiDang', $this->NguoiDang);
     $stmt->bindParam(':LuotXem', $this->LuotXem);
- 
-    // hash the password before saving to database
-    // $password_hash = password_hash($this->password, PASSWORD_BCRYPT);
-    // $stmt->bindParam(':password', $password_hash);
-    // $stmt->bindParam(':confirm_password', $password_hash);
- 
-    // $stmt->bindParam(':access_level', $this->access_level);
-    // $stmt->bindParam(':access_code', $this->access_code);
-    // $stmt->bindParam(':status', $this->status);
-    // $stmt->bindParam(':created', $this->created);
+
  
     // execute the query, also check if query was successful
     if($stmt->execute()){
@@ -127,11 +168,12 @@ function readAll($from_record_num, $records_per_page){
                 CaSi,
                 TacGia,
                 TheLoai,
+                Dieubh,
                 CapNhat,
                 NguoiDang,
                 LuotXem
             FROM " . $this->table_name . "
-            ORDER BY Mabh DESC
+            ORDER BY Mabh ASC
             LIMIT ?, ?";
  
     // prepare query statement
@@ -147,6 +189,7 @@ function readAll($from_record_num, $records_per_page){
     // return values
     return $stmt;
 }
+
 
 // used for paging users
 public function countAll(){
