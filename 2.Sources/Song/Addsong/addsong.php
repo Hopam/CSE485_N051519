@@ -59,7 +59,7 @@ if($_POST){
         $user->CaSi=$_POST['CaSi'];
         $user->Tone=$_POST['Tone'];
         $user->Link=$_POST['Link'];
-        $user->Dieubh='Ballad';
+        $user->Dieubh='';
         $user->Capo=0;
         $user->NguoiDang= $_SESSION['firstname'];
         $user->LuotXem=0;
