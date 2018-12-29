@@ -121,6 +121,7 @@ if ($result) {
     color:gray;
 }
 a{
+    color:black;
     text-decoration:none;
 }
 #left-content-down{

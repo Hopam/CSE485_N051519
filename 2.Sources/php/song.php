@@ -39,9 +39,9 @@ if ($result) {
                 echo "<img class='flag' src='../Image/flag-VN.gif' />";
                     echo $row[4];
                 echo "<img class='flag' src='../Image/flag-VN.gif' />";
-            echo "</div";
+            echo "</div>";
             echo "<div id='nguoi_dang'>";
-                 echo " Người đăng:<img style='vertical-align:middle' width='20px' height='20px' src='../Image/login-icon.png'/> $row[11]";
+                 echo "Người đăng :<img style='vertical-align:middle' width='20px' height='20px' src='../Image/login-icon.png'/> $row[11]";
             echo " </div>";    
             echo "<p style='padding:20px'>";
             echo "<div class='info'>";
