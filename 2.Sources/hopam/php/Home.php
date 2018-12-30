@@ -9,6 +9,7 @@
     <body>
     <?php
 include_once 'header.php';
+include_once 'core.php';
     ?>
 
      
@@ -22,9 +23,10 @@ include_once 'header.php';
                 
                 <ol > 
                 <?php
+                
                     $conn = mysqli_connect("localhost", "root", "", "hopambh");
                     mysqli_query ($conn, 'set names UTF8');
-                    $sql="SELECT *  FROM baihat LIMIT 9 ";
+                    $sql="SELECT *  FROM baihat ORDER BY LuotXem DESC LIMIT 9 ";
 
                     $result = mysqli_query($conn, $sql);
                     // mysqli_set_charset($conn, 'UTF8');
@@ -34,7 +36,7 @@ include_once 'header.php';
                         // Hàm `mysql_fetch_row()` sẽ chỉ fetch dữ liệu một record mỗi lần được gọi
                         // do đó cần sử dụng vòng lặp While để lặp qua toàn bộ dữ liệu trên bảng posts
                         while ($row=mysqli_fetch_row($result)) {
-                            printf ("<li> $row[1] &nbsp <i> $row[3] </i> </a></li> <br>");
+                            printf ("<a href=".$home_url."/php/detail.php?id=".$row[0]."><li> $row[1] </a>&nbsp <i> $row[3] </i> </li> <br>");
                         }
 
                         // Máy tính sẽ lưu kết quả từ việc truy vấn dữ liệu bảng
