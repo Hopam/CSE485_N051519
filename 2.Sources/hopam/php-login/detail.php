@@ -10,7 +10,7 @@
 <body>
 
 <?php
-include_once 'header.php';
+include_once '../php/header.php';
 ?>
 
         <div id="content">
@@ -77,15 +77,6 @@ include_once 'header.php';
                     <img class="image-ha" src="../Image/Am.jpg" />
                     <img class="image-ha" src="../Image/G.png" />
                     <img class="image-ha" src="../Image/D.png" />
-                    <img class="image-ha" src="../Image/Em.jpg" />
-                    <img class="image-ha" src="../Image/Am7.png" />
-                    <img class="image-ha" src="../Image/Em7.png" />
-                    <img class="image-ha" src="../Image/F.jpg" />
-                    <img class="image-ha" src="../Image/Fm.png" />
-                    <img class="image-ha" src="../Image/Cmaj7.jpg"/>
-                    <img class="image-ha" src="../Image/Bm7.png" />
-                    <img class="image-ha" src="../Image/Dm7.jpg" />
-                    <h2 style="padding-left:70px">A7</h2><img class="image-ha" src="../Image/A7.png" />
                 </div>
             </div>
         </div>
@@ -97,10 +88,6 @@ include_once 'header.php';
     padding-left:40px;
 }
 a{color:black;}
-#right-content{
-    width:36%;
-    margin-top:90px;
-}
 </style>
 
 </body>

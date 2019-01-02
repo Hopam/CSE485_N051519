@@ -210,6 +210,34 @@ function readUser($from_record_num, $records_per_page){
 }
 
 
+function readAdmin($from_record_num, $records_per_page){
+    // query to read all user records, with limit clause for pagination
+    $query = "SELECT
+                id,
+                firstname,
+                lastname,
+                email,
+                contact_number,
+                address
+            FROM " . $this->table_name . "
+            WHERE access_level = 'Admin'
+            LIMIT ?, ?";
+ 
+    // prepare query statement
+    $stmt = $this->conn->prepare( $query );
+
+    // bind limit clause variables
+    $stmt->bindParam(1, $from_record_num, PDO::PARAM_INT);
+    $stmt->bindParam(2, $records_per_page, PDO::PARAM_INT);
+ 
+    // execute query
+    $stmt->execute();
+    $num = $stmt->rowCount();
+    // return values
+    return $stmt;
+}
+
+
 
 // used for paging users
 public function countAll(){

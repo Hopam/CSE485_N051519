@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="../css/song.css">
+    <link rel="stylesheet" type="text/css" href="../../css/song.css">
     <title>Hợp âm bài hát</title>
 </head>
 <body>
@@ -37,12 +37,12 @@ include_once 'header.php';
 
         echo"<div id='name-song'><h1>$row[1] </h1></div>";
         echo "<div id='singer'>";
-            echo "<img class='flag' src='../Image/flag-VN.gif' />";
+            echo "<img class='flag' src='../../Image/flag-VN.gif' />";
                 echo $row[4];
-            echo "<img class='flag' src='../Image/flag-VN.gif' />";
+            echo "<img class='flag' src='../../Image/flag-VN.gif' />";
         echo "</div>";
         echo "<div id='nguoi_dang'>";
-            echo "Người đăng :<img style='vertical-align:middle' width='20px' height='20px' src='../Image/login-icon.png'/> $row[11]";
+            echo "Người đăng :<img style='vertical-align:middle' width='20px' height='20px' src='../../Image/login-icon.png'/> $row[11]";
         echo " </div>";    
         echo "<p style='padding:20px'>";
         echo "<div class='info'>";
@@ -72,20 +72,11 @@ include_once 'header.php';
             		<span><h4>Các thế tay của hợp âm</h4></span>
                 </div>
                 <div class="ha-content">
-                    <img class="image-ha" src="../Image/C.png" />
-                    <img class="image-ha" src="../Image/Bm.png" />
-                    <img class="image-ha" src="../Image/Am.jpg" />
-                    <img class="image-ha" src="../Image/G.png" />
-                    <img class="image-ha" src="../Image/D.png" />
-                    <img class="image-ha" src="../Image/Em.jpg" />
-                    <img class="image-ha" src="../Image/Am7.png" />
-                    <img class="image-ha" src="../Image/Em7.png" />
-                    <img class="image-ha" src="../Image/F.jpg" />
-                    <img class="image-ha" src="../Image/Fm.png" />
-                    <img class="image-ha" src="../Image/Cmaj7.jpg"/>
-                    <img class="image-ha" src="../Image/Bm7.png" />
-                    <img class="image-ha" src="../Image/Dm7.jpg" />
-                    <h2 style="padding-left:70px">A7</h2><img class="image-ha" src="../Image/A7.png" />
+                    <img class="image-ha" src="../../Image/C.png" />
+                    <img class="image-ha" src="../../Image/Bm.png" />
+                    <img class="image-ha" src="../../Image/Am.jpg" />
+                    <img class="image-ha" src="../../Image/G.png" />
+                    <img class="image-ha" src="../../Image/D.png" />
                 </div>
             </div>
         </div>
@@ -97,10 +88,6 @@ include_once 'header.php';
     padding-left:40px;
 }
 a{color:black;}
-#right-content{
-    width:36%;
-    margin-top:90px;
-}
 </style>
 
 </body>

@@ -16,31 +16,37 @@
     <div id="body">
     	<center><h1>Thể Loại</h1></center><br/>
         <a href="../Song/TheLoai/NhacTre.php">
-        <div style="background-color:#96CBF2" class="box">
-        	<p>Nhạc Trẻ<br/>
-            	<br/>
-            	<b>11 bài</b>
-            </p>          
-        </div>
+            <div style="background-color:#96CBF2" class="box">
+                <p>Nhạc Trẻ<br/>
+                    <br/>
+                    <b>11 bài</b>
+                </p>          
+            </div>
         </a>
-        <div style="background-color:#F09891" class="box">
-        	<p>Pop Ballad<br/>
-            	<br/>
-            	<b>1 bài</b>
-            </p>          
-        </div>
-        <div style="background-color:#D6DCF5" class="box">
-        	<p>Ballad<br/>
-            <br/>
-            <b>1 bài</b>
-            </p>
-        </div>
-        <div style="background-color:#D6DCF5" class="box">
+        <a href="../Song/TheLoai/Pop-Ballad.php">
+            <div style="background-color:#F09891" class="box">
+                <p>Pop Ballad<br/>
+                    <br/>
+                    <b>1 bài</b>
+                </p>          
+            </div>
+        </a>
+        <a href="../Song/TheLoai/Ballad.php">
+            <div style="background-color:#D6DCF5" class="box">
+                <p>Ballad<br/>
+                <br/>
+                <b>1 bài</b>
+                </p>
+            </div>
+        </a>
+        <a href="../Song/TheLoai/TruTinh.php">
+        <div style="background-color:#8CCD90" class="box">
         	<p>Nhạc Trữ Tình<br/>
             <br/>
             <b>1 bài</b>
             </p>
         </div>
+        </a>
         <div style="background-color:#EFD6F5" class="box">
         	<p>Nhạc Vàng<br/>
             	<br/>
@@ -104,6 +110,8 @@
             </p>         
         </div>
 
-
+<style>
+a{color:black;}
+</style>
 </body>
 </html>

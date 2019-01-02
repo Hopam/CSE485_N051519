@@ -108,3 +108,61 @@ a:hover{
 	z-index: 999;
 }
 
+/* CSS TABLET */
+@media screen and (min-width:600px) and (max-width:1200px){
+	.desktop{display:none}
+	.mobile{display:block}
+	
+	#top-nav-bar{
+		height:180px;
+		padding:0;
+		margin:0;
+	}
+	#myInput{
+		width:50%;
+		float:none;	
+	}
+	body{padding:0;}
+	#nav-bar{
+		width:100%;
+		height:80px;
+		padding:10px;
+	}
+	#title-bar{        
+		width:100%;
+		height:60px;
+		padding:10px;
+	}
+	.text-item{padding:5px;}
+	.btn{padding:5px;}
+}
+
+/* CSS MOBILE*/
+@media screen and (max-width:600px){
+	.desktop{display:none}
+	.mobile{display:block}
+	
+	#top-nav-bar{
+		height:180px;
+		padding:0;
+		margin:0;
+	}
+	#myInput{
+		width:50%;
+		float:none;	
+	}
+	body{padding:0;}
+	#nav-bar{
+		width:100%;
+		height:80px;
+		padding:10px;
+	}
+	#title-bar{        
+		width:100%;
+		height:60px;
+		padding:10px;
+	}
+	.text-item{padding:5px;}
+	.btn{padding:5px;}
+}
+

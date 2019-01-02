@@ -8,8 +8,7 @@
     </head>
     <body>
     <?php
-include_once 'header.php';
-include_once 'core.php';
+    include_once 'header.php';
     ?>
 
      
@@ -17,13 +16,12 @@ include_once 'core.php';
             
         	<div id="left-content">
             	<div class="top-left-content">
-  					 <span><b>HOT NHẤT HÔM NAY</b></span>
+  					 <span><b>HOT NHẤT </b></span>
 				</div> 
                 <div id="body-left-content">
                 
                 <ol > 
                 <?php
-                
                     $conn = mysqli_connect("localhost", "root", "", "hopambh");
                     mysqli_query ($conn, 'set names UTF8');
                     $sql="SELECT *  FROM baihat ORDER BY LuotXem DESC LIMIT 9 ";
@@ -36,7 +34,7 @@ include_once 'core.php';
                         // Hàm `mysql_fetch_row()` sẽ chỉ fetch dữ liệu một record mỗi lần được gọi
                         // do đó cần sử dụng vòng lặp While để lặp qua toàn bộ dữ liệu trên bảng posts
                         while ($row=mysqli_fetch_row($result)) {
-                            printf ("<a href=".$home_url."/php/detail.php?id=".$row[0]."><li> $row[1] </a>&nbsp <i> $row[3] </i> </li> <br>");
+                            printf ("<a href=".$home_url."detail.php?id=".$row[0]."><li> $row[1] </a>&nbsp <i> $row[3] </i> </li> <br>");
                         }
 
                         // Máy tính sẽ lưu kết quả từ việc truy vấn dữ liệu bảng
@@ -58,7 +56,7 @@ include_once 'core.php';
                     $conn = mysqli_connect("localhost", "root", "", "hopambh");
                     mysqli_query ($conn, 'set names UTF8');
 
-                    $sql="SELECT * FROM baihat WHERE Mabh='5' ";
+                    $sql="SELECT * FROM baihat WHERE CapNhat >= ALL(SELECT CapNhat FROM baihat) ";
 
                     $result = mysqli_query($conn, $sql);
 
@@ -66,7 +64,7 @@ include_once 'core.php';
                         // Hàm `mysql_fetch_row()` sẽ chỉ fetch dữ liệu một record mỗi lần được gọi
                         // do đó cần sử dụng vòng lặp While để lặp qua toàn bộ dữ liệu trên bảng posts
                         while ($row=mysqli_fetch_row($result)) {
-                            echo "<center><h2>$row[1]</h2></center><br/>";
+                            echo "<center><h2>$row[1]</h2>&nbsp <i> $row[3] </i></center><br/>";
                             echo "<p>$row[2]</p>";
                         }
                         mysqli_free_result($result);
@@ -97,40 +95,40 @@ include_once 'core.php';
                 </div>
             </div>      	
         </div>
-<style>
-.hopam{
-    color:red;
-    cursor:pointer;
-}
-.hopam:hover{
-    color:gray;
-}
-a{
-    color:black;
-    text-decoration:none;
-}
-#left-content-down{
-    float:left;
-    width:56%;
-	height:100%;
-	background-color:white;
-	border:1px solid #ddd;
-	position:relative;
-	margin-top:50px;
-	border-radius: 10px;
-}
-#right-content-body{
-    padding:40px 40px 0 40px;
-    text-align:justify;
-    overflow:scroll;
-    height:400px;
-    margin-top:60px;
-}
-.new-song{
-    position:absolute;
-}
-</style>
- 
-  
+
+        <style>
+        .hopam{
+            color:red;
+            cursor:pointer;
+        }
+        .hopam:hover{
+            color:gray;
+        }
+        a{
+            color:black;
+            text-decoration:none;
+        }
+        #left-content-down{
+            float:left;
+            width:56%;
+            height:100%;
+            background-color:white;
+            border:1px solid #ddd;
+            position:relative;
+            margin-top:50px;
+            border-radius: 10px;
+        }
+        #right-content-body{
+            padding:40px 40px 0 40px;
+            text-align:justify;
+            overflow:scroll;
+            height:400px;
+            margin-top:60px;
+        }
+        .new-song{
+            position:absolute;
+        }
+        </style>
+ <?php include_once "Footer.php";?>
     </body>
 </html>

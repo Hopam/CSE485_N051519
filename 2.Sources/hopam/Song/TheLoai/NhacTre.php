@@ -17,7 +17,6 @@ $page_title = "Nhạc Trẻ";
  
 // include page header HTML
 include_once "../Addsong/layout_head.php";
- 
 
 $conn = mysqli_connect("localhost", "root", "", "hopambh");
 mysqli_query ($conn, 'set names UTF8');
@@ -31,7 +30,7 @@ if ($result) {
     // Hàm `mysql_fetch_row()` sẽ chỉ fetch dữ liệu một record mỗi lần được gọi
     // do đó cần sử dụng vòng lặp While để lặp qua toàn bộ dữ liệu trên bảng posts
     while ($row=mysqli_fetch_row($result)) {
-        printf ("<ol class='list'> %s - %s . Tác Giả : %s . Lượt xem: %s</ol>",$row[1],$row[3],$row[4],$row[12]);
+        printf ("<a href=../Baihat/detail.php?id=".$row[0]."><ol class='list'>$row[1] </a>&nbsp <i>$row[3]</i></ol>");
     }
 
     // Máy tính sẽ lưu kết quả từ việc truy vấn dữ liệu bảng

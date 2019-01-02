@@ -1,40 +1,32 @@
     
 <?php
 // Array with names
-    //khai báo biến host
-    // $hostName = 'localhost';
-    // // khai báo biến username
-    // $userName = 'root';
-    // //khai báo biến password
-    // $passWord = '';
-    // // khai báo biến databaseName
-    // $databaseName = 'hopambh';
-    // // khởi tạo kết nối
-    // $connect = mysqli_connect($hostName, $userName, $passWord, $databaseName);
     // $keyword = $_GET['keyword'];
 //$sql = mysqli_query("SELECT Tenbh FROM baihat WHERE Tenbh LIKE '%$keyword%' ");
 //$a = mysqli_fetch_array($sql);
-$a[] = "Anh Đang Ở Đâu Đấy Anh - Hương Giang Idol <a href='#'><img class='link' src='../Image/Link.svg' /></a>";
-$a[] = "Anh Đếch Cần Gì Nhiều Ngoài Em -  Đen Vâu,Vũ,Thành Đồng <a href='#'><img class='link' src='../Image/Link.svg' /></a>";
-$a[] = "Phía sau một cô gái - Soobin Hoàng Sơn <a href='#'><img class='link' src='../Image/Link.svg' /></a>";
-$a[] = "Chấp nhận 2 - Hòa Minzy <a href='#'><img class='link' src='../Image/Link.svg' /></a>";
-$a[] = "Suýt Nữa Thì - Andiez <a href='#'><img class='link' src='../Image/Link.svg' /></a>";
-$a[] = "Sai Người Sai Thời Điểm - Thanh Hưng <a href='#'><img class='link' src='../Image/Link.svg' /></a>";
-$a[] = "Tháng Tư Là Lời Nói Dối Của Em - Hà Anh Tuấn <a href='#'><img class='link' src='../Image/Link.svg' /></a>";
-$a[] = "Thằng Điên - Phương Ly,JustaTee <a href='Thang-dien.php'><img class='link' src='../Image/Link.svg' /></a>";
-$a[] = "Mãi Mãi Sẽ Hết Vào Ngày Mai - Andiez <a href='#'><img class='link' src='../Image/Link.svg' /></a>";
-$a[]= "Càng Níu Giữ Càng Dễ Mất - Mr.Siro <a href='Cang-niu-giu-cang-de-mat.php'><img class='link' src='../Image/Link.svg' /></a>";
-$a[] = "Hong Kong 1 - Nguyễn Trọng Tài <a href='Hong-Kong-1.php'><img class='link' src='../Image/Link.svg' /></a>";
-$a[] = "Vô Tình - Hoaprox, Xesi <a href='#'><img class='link' src='../Image/Link.svg' /></a>";
-$a[] = "Y.E.U - M.I.N <a href='#'><img class='link' src='../Image/Link.svg' /></a>";
-$a[] = "Yêu 5 - Rhymastic <a href='#'><img class='link' src='../Image/Link.svg' /></a>";
-$a[] = "Lạ Lùng - Vũ <a href='#'><img class='link' src='../Image/Link.svg' /></a>";
-$a[] = "Người Tình Mùa Đông - Hà Anh Tuấn <a href='#'><img class='link' src='../Image/Link.svg' /></a>";
-// get the q parameter from URL
+include_once 'core.php';
+$a[] = "Anh Đang Ở Đâu Đấy Anh - Hương Giang Idol <a href=".$home_url."detail.php?id=14><img class='link' src='../Image/Link.svg' /></a>";
+$a[] = "Anh Đếch Cần Gì Nhiều Ngoài Em -  Đen Vâu,Vũ,Thành Đồng <a href=".$home_url."detail.php?id=13><img class='link' src='../Image/Link.svg' /></a>";
+$a[] = "Chấp nhận 2 - Hòa Minzy <a href=".$home_url."detail.php?id=4><img class='link' src='../Image/Link.svg' /></a>";
+$a[] = "Suýt Nữa Thì - Andiez <a href=".$home_url."detail.php?id=5><img class='link' src='../Image/Link.svg' /></a>";
+$a[] = "Sai Người Sai Thời Điểm - Thanh Hưng <a href=".$home_url."detail.php?id=7><img class='link' src='../Image/Link.svg' /></a>";
+$a[] = "Tháng Tư Là Lời Nói Dối Của Em - Hà Anh Tuấn <a href=".$home_url."detail.php?id=6><img class='link' src='../Image/Link.svg' /></a>";
+$a[] = "Thằng Điên - Phương Ly,JustaTee <a href=".$home_url."detail.php?id=1><img class='link' src='../Image/Link.svg' /></a>";
+$a[] = "Mãi Mãi Sẽ Hết Vào Ngày Mai - Andiez <a href=".$home_url."detail.php?id=9><img class='link' src='../Image/Link.svg' /></a>";
+$a[]= "Càng Níu Giữ Càng Dễ Mất - Mr.Siro <a href=".$home_url."detail.php?id=2><img class='link' src='../Image/Link.svg' /></a>";
+$a[] = "Hong Kong 1 - Nguyễn Trọng Tài <a href=".$home_url."detail.php?id=3><img class='link' src='../Image/Link.svg' /></a>";
+$a[] = "Vô Tình - Hoaprox, Xesi <a href=".$home_url."detail.php?id=8><img class='link' src='../Image/Link.svg' /></a>";
+$a[] = "Y.E.U - M.I.N <a href=".$home_url."detail.php?id=15><img class='link' src='../Image/Link.svg' /></a>";
+$a[] = "Yêu 5 - Rhymastic <a href=".$home_url."detail.php?id=16><img class='link' src='../Image/Link.svg' /></a>";
+$a[] = "Lạ Lùng - Vũ <a href=".$home_url."detail.php?id=11><img class='link' src='../Image/Link.svg' /></a>";
+$a[] = "Người Tình Mùa Đông - Hà Anh Tuấn <a href=".$home_url."detail.php?id=12><img class='link' src='../Image/Link.svg' /></a>";
+$a[] = "Chiều Nay Không Có Mưa Bay - Thái Tuyết Trâm <a href=".$home_url."detail.php?id=10><img class='link' src='../Image/Link.svg' /></a>";
+
+// lấy tham số q từ URL
 $q = $_REQUEST["q"];
 
 $hint = "";
-// lookup all hints from array if $q is different from "" 
+// tra cứu tất cả các gợi ý từ mảng nếu $ q khác với ""
 if ($q !== "") {
   $q = strtolower($q);
   $len=strlen($q);
@@ -45,7 +37,7 @@ if ($q !== "") {
         $hint = "<ul class='list_search'>$name</ul>";
       }
        else {
-        $hint .= "<ul class='list_search'> $name</ul>";
+        $hint = "<ul class='list_search'> $name</ul>";
       }
     }
   }

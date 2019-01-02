@@ -15,6 +15,7 @@
     
     <div id="body">
     	<center><h1>Điệu bài hát</h1></center><br/>
+
         <a href="../Song/Dieubh/Ballad.php">
         <div style="background-color:#96CBF2" class="box">
         	<p>Điệu Ballad<br/>
@@ -23,18 +24,23 @@
             </p>          
         </div>
         </a>
+
         <div style="background-color:#D6DCF5" class="box">
         	<p>Điệu Blues<br/>
             <br/>
             <b>0 bài</b>
             </p>
         </div>
+
+        <a href="../Song/Dieubh/Slow.php">
         <div style="background-color:#EFD6F5" class="box">
         	<p>Điệu Slow<br/>
             	<br/>
             	<b>1 bài</b>
             </p>          
         </div>
+        </a>
+
         <div style="background-color:#8CCD90" class="box">
         	<p>Điệu Disco<br/>
             	<br/>
@@ -110,6 +116,8 @@
             	<b>0 bài</b>
             </p>          
         </div>
-
+<style>
+a{color:black;}
+</style>
 </body>
 </html>
