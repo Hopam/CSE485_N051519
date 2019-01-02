@@ -158,7 +158,7 @@ if($user->create()){
                         <label>
                         Link nhạc:
                         </label>
-                        <input type="text" class="hac-input" class='form-control' name="Link" required placeholder="Ví dụ: http://mp3.zing.vn/..." value="<?php echo isset($_POST['Link']) ? htmlspecialchars($_POST['Link'], ENT_QUOTES) : "";  ?>">
+                        <input type="text" style="width:100%"  class='form-control' name="Link" required placeholder="Ví dụ: http://mp3.zing.vn/..." value="<?php echo isset($_POST['Link']) ? htmlspecialchars($_POST['Link'], ENT_QUOTES) : "";  ?>">
                         </div>
                     </div>
                                 </div>
