@@ -24,7 +24,7 @@
                 <?php
                     $conn = mysqli_connect("localhost", "root", "", "hopambh");
                     mysqli_query ($conn, 'set names UTF8');
-                    $sql="SELECT *  FROM baihat ORDER BY LuotXem DESC LIMIT 9 ";
+                    $sql="SELECT *  FROM baihat ORDER BY LuotXem DESC LIMIT 10 ";
 
                     $result = mysqli_query($conn, $sql);
                     // mysqli_set_charset($conn, 'UTF8');
@@ -64,8 +64,27 @@
                         // Hàm `mysql_fetch_row()` sẽ chỉ fetch dữ liệu một record mỗi lần được gọi
                         // do đó cần sử dụng vòng lặp While để lặp qua toàn bộ dữ liệu trên bảng posts
                         while ($row=mysqli_fetch_row($result)) {
-                            echo "<center><h2>$row[1]</h2>&nbsp <i> $row[3] </i></center><br/>";
-                            echo "<p>$row[2]</p>";
+                        echo "<center><h2>$row[1]</h2>&nbsp <i> $row[3] </i></center><br/>";
+                           
+                        echo "<div id='nguoi_dang'>";
+                            echo "Người đăng :<img style='vertical-align:middle' width='20px' height='20px' src='../Image/login-icon.png'/> $row[11]";
+                        echo " </div>";    
+                    
+                        echo "<div class='info'>";
+                            echo "<b>Tone:&ensp;<span class='hopam'> $row[7]</span></b><br/>";
+                            echo "<b>Điệu:</b>&ensp;<span>$row[6]</span><br/><br/>";
+                        echo "</div>";
+                        echo "<p style='padding:20px'>";
+                        //echo $row[2];
+                        $replace_content = str_replace("[", "<span class='hopam'>[", $row[2]);
+                        $replace_content = str_replace("]", "]</span>", $replace_content);
+                        // echo $replace_content;
+                        $aryLine = explode(PHP_EOL, $replace_content);
+                        echo implode("<br /><br /> ", $aryLine);
+                        echo "</p>";
+                        echo "<br/>";
+                        echo "<br/>";
+                        echo "<br/>";
                         }
                         mysqli_free_result($result);
                     }

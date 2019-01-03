@@ -44,13 +44,13 @@ include_once 'header.php';
         echo "<div id='nguoi_dang'>";
             echo "Người đăng :<img style='vertical-align:middle' width='20px' height='20px' src='../../Image/login-icon.png'/> $row[11]";
         echo " </div>";    
-        echo "<p style='padding:20px'>";
+     
         echo "<div class='info'>";
             echo "<b>Tone:&ensp;<span class='hopam'> $row[7]</span></b><br/>";
             echo "<b>Điệu:</b>&ensp;<span>$row[6]</span><br/>";
         echo "</div>";
         echo $row[2];
-        echo "</p>";
+       
         echo " </div>";
         echo "<div id='bottom-content'>";
         echo "<div class='info-song'>";
