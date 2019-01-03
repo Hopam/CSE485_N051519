@@ -135,7 +135,7 @@ if($user->create()){
                         <label for="song-genres">
                            Capo:
                         </label>
-                        <input type="text" class='form-control' class="genre-autocomplete hac-input ui-autocomplete-input" name="Capo" placeholder="Ví dụ:0,1,2,..." value="<?php echo isset($_POST['Capo']) ? htmlspecialchars($_POST['Capo'], ENT_QUOTES) : "";  ?>" autocomplete="off">
+                        <input type="text"  class='form-control' class="genre-autocomplete hac-input ui-autocomplete-input" name="Capo" placeholder="Ví dụ:0,1,2,..." value="<?php echo isset($_POST['Capo']) ? htmlspecialchars($_POST['Capo'], ENT_QUOTES) : "";  ?>" autocomplete="off">
                     </div>
                 </div>
                 <div class="clearfix"></div>
@@ -146,7 +146,7 @@ if($user->create()){
                         <label>
                         Ca sĩ:
                         </label>
-                        <input type="text"style="width:100%" class='form-control' name="CaSi" required placeholder="Ví dụ: Cẩm Ly, Đan Trường..." autocomplete="off" value="<?php echo isset($_POST['CaSi']) ? htmlspecialchars($_POST['CaSi'], ENT_QUOTES) : "";  ?>"/>
+                        <input type="text" style="width:100%" class='form-control' name="CaSi" required placeholder="Ví dụ: Cẩm Ly, Đan Trường..." autocomplete="off" value="<?php echo isset($_POST['CaSi']) ? htmlspecialchars($_POST['CaSi'], ENT_QUOTES) : "";  ?>"/>
                         </div>
                         <div class="col-md-2">
                         <label>
@@ -158,7 +158,7 @@ if($user->create()){
                         <label>
                         Link nhạc:
                         </label>
-                        <input type="text" class="hac-input" class='form-control' name="Link" required placeholder="Ví dụ: http://mp3.zing.vn/..." value="<?php echo isset($_POST['Link']) ? htmlspecialchars($_POST['Link'], ENT_QUOTES) : "";  ?>">
+                        <input type="text" style="width:100%" class="hac-input" class='form-control' name="Link" required placeholder="Ví dụ: http://mp3.zing.vn/..." value="<?php echo isset($_POST['Link']) ? htmlspecialchars($_POST['Link'], ENT_QUOTES) : "";  ?>">
                         </div>
                     </div>
                                 </div>
