@@ -38,7 +38,7 @@ include_once '../Addsong/header.php';
         echo"<div id='name-song'><h1>$row[1] </h1></div>";
         echo "<div id='singer'>";
             echo "<img class='flag' src='../../Image/flag-VN.gif' />";
-                echo $row[4];
+                echo $row[3];
             echo "<img class='flag' src='../../Image/flag-VN.gif' />";
         echo "</div>";
         echo "<div id='nguoi_dang'>";
