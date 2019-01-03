@@ -7,7 +7,6 @@
  
 <!-- Bootstrap JavaScript -->
 <script src="../Bootstrap/js/bootstrap.min.js"></script>
- 
 <!-- end HTML page -->
 </body>
 </html>

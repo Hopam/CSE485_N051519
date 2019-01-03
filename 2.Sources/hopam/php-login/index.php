@@ -220,6 +220,17 @@ echo "</div>";
 <?php
 // footer HTML and JavaScript codes
 include 'layout_foot.php';
+include_once "../php/Footer.php";
 ?>
+<style>
+.footer-clean {
+    margin:30px 0px 60px 30px;
+}
+.col-md-3{
+  width: 24%;
+  float: left;
+  margin-bottom:40px;
+}
+</style>
 </body>
 </html>

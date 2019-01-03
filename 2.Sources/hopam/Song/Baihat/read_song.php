@@ -106,13 +106,13 @@ echo "</div>";
                     <table class='table table-responsive'>
 
                         <tr>
-                            <td class='width-30-percent'>Mã bài hát</td>
-                            <td><input type='text' name='Mabh' class='form-control' placeholder='Mã bài hát như STT nhé' required value="<?php echo isset($_POST['Mabh']) ? htmlspecialchars($_POST['Mabh'], ENT_QUOTES) : "";  ?>" /></td>
+                            <td class='width-30-percent'>STT</td>
+                            <td><input type='text' name='Mabh' class='form-control' placeholder='STT phải đúng với bài muốn sửa' required value="<?php echo isset($_POST['Mabh']) ? htmlspecialchars($_POST['Mabh'], ENT_QUOTES) : "";  ?>" /></td>
                         </tr>
                 
                         <tr>
                             <td class='width-30-percent'>Tên bài hát</td>
-                            <td><input type='text' name='Tenbh' class='form-control' required value="<?php echo isset($_POST['Tenbh']) ? htmlspecialchars($_POST['Tenbh'], ENT_QUOTES) : "";  ?>" /></td>
+                            <td><input type='text' name='Tenbh' class='form-control'  required value="<?php echo isset($_POST['Tenbh']) ? htmlspecialchars($_POST['Tenbh'], ENT_QUOTES) : "";  ?>" /></td>
                         </tr>
 
                         <tr>
@@ -179,6 +179,19 @@ echo "</div>";
         </div>
      
     </div>
-
+<?php
+ 
+ include_once "../Addsong/Footer.php"; 
+?>
+<style>
+.footer-clean {
+    margin:40px 0px 60px -30px;
+}
+.col-md-3{
+  width: 24%;
+  float: left;
+  margin-bottom:40px;
+}
+</style>
 </body>
 </html>

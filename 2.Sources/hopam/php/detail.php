@@ -50,6 +50,7 @@ include_once 'header.php';
         echo "<div class='info'>";
             echo "<b>Tone:&ensp;<span class='hopam'> $row[7]</span></b><br/>";
             echo "<b>Điệu:</b>&ensp;<span>$row[6]</span><br/>";
+            echo "<b>Capo:</b>&ensp;<span>$row[8]</span><br/>";
         echo "</div>";
         echo "<p style='padding:30px'>";
         //echo $row[2];
@@ -83,9 +84,9 @@ include_once 'header.php';
                     <img class="image-ha" src="../Image/C.png" />
                     <img class="image-ha" src="../Image/Bm.png" />
                     <img class="image-ha" src="../Image/Am.jpg" />
-                    <img class="image-ha" src="../Image/G.png" />
                     <img class="image-ha" src="../Image/D.png" />
                     <img class="image-ha" src="../Image/Em.jpg" />
+                    <img class="image-ha" src="../Image/G.png" />
                     <img class="image-ha" src="../Image/Am7.png" />
                     <img class="image-ha" src="../Image/Em7.png" />
                     <img class="image-ha" src="../Image/F.jpg" />
@@ -93,11 +94,19 @@ include_once 'header.php';
                     <img class="image-ha" src="../Image/Cmaj7.jpg"/>
                     <img class="image-ha" src="../Image/Bm7.png" />
                     <img class="image-ha" src="../Image/Dm7.jpg" />
-                    <h2 style="padding-left:70px">A7</h2><img class="image-ha" src="../Image/A7.png" />
                 </div>
             </div>
         </div>
+<?php include_once "Footer.php";?>
 <style>
+.footer-clean {
+    margin:1500px 0px 60px 30px;
+}
+.col-md-3{
+  width: 24%;
+  float: left;
+  margin-bottom:40px;
+}
 #singer{
     width:280px;
 }

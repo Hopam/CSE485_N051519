@@ -48,8 +48,15 @@ include_once '../php/header.php';
         echo "<div class='info'>";
             echo "<b>Tone:&ensp;<span class='hopam'> $row[7]</span></b><br/>";
             echo "<b>Điệu:</b>&ensp;<span>$row[6]</span><br/>";
+            echo "<b>Capo:</b>&ensp;<span>$row[8]</span><br/>";
         echo "</div>";
-        echo $row[2];
+        echo "<p style='padding:30px'>";
+        //echo $row[2];
+        $replace_content = str_replace("[", "<span class='hopam'>[", $row[2]);
+        $replace_content = str_replace("]", "]</span>", $replace_content);
+        // echo $replace_content;
+        $aryLine = explode(PHP_EOL, $replace_content);
+        echo implode("<br /><br /> ", $aryLine);
         echo "</p>";
         echo " </div>";
         echo "<div id='bottom-content'>";
@@ -72,15 +79,32 @@ include_once '../php/header.php';
             		<span><h4>Các thế tay của hợp âm</h4></span>
                 </div>
                 <div class="ha-content">
-                    <img class="image-ha" src="../Image/C.png" />
+                <img class="image-ha" src="../Image/C.png" />
                     <img class="image-ha" src="../Image/Bm.png" />
                     <img class="image-ha" src="../Image/Am.jpg" />
-                    <img class="image-ha" src="../Image/G.png" />
                     <img class="image-ha" src="../Image/D.png" />
+                    <img class="image-ha" src="../Image/Em.jpg" />
+                    <img class="image-ha" src="../Image/G.png" />
+                    <img class="image-ha" src="../Image/Am7.png" />
+                    <img class="image-ha" src="../Image/Em7.png" />
+                    <img class="image-ha" src="../Image/F.jpg" />
+                    <img class="image-ha" src="../Image/Fm.png" />
+                    <img class="image-ha" src="../Image/Cmaj7.jpg"/>
+                    <img class="image-ha" src="../Image/Bm7.png" />
+                    <img class="image-ha" src="../Image/Dm7.jpg" />
                 </div>
             </div>
         </div>
+<?php include_once "../php/Footer.php";?>
 <style>
+.footer-clean {
+    margin:1500px 0px 60px 30px;
+}
+.col-md-3{
+  width: 24%;
+  float: left;
+  margin-bottom:40px;
+}
 #singer{
     width:280px;
 }

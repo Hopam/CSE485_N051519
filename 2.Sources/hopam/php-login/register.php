@@ -72,7 +72,7 @@ if($user->create()){
     // send confimation email
     $send_to_email=$_POST['email'];
     $body="Hi {$send_to_email}.<br /><br />";
-    $body.="Please click the following link to verify your email and login: {$home_url}verify.php/?access_code={$access_code}";
+    $body.="Please click the following link to verify your email and login: {$home_url}verify.php?access_code={$access_code}";
     $subject="Verification Email";
     include_once "libs/PHPMailer/index.php";
     // if($utils->sendEmailViaPhpMail($send_to_email, $subject, $body)){
@@ -152,6 +152,17 @@ echo "</div>";
  
 // include page footer HTML
 include_once "layout_foot.php";
+include_once "../php/Footer.php";
 ?>
+<style>
+.footer-clean {
+    margin:0px 0px 60px 30px;
+}
+.col-md-3{
+  width: 24%;
+  float: left;
+  margin-bottom:40px;
+}
+</style>
 </body>
 </html>

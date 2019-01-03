@@ -40,7 +40,18 @@ if ($result) {
 }
 
 ?>
+<?php
+ include_once "../Addsong/Footer.php"; 
+?>
 <style>
+.footer-clean {
+    margin:40% 0px 60px -30px;
+}
+.col-md-3{
+  width: 24%;
+  float: left;
+  margin-bottom:40px;
+}
 .list{
     background:#D6DCF5;
     padding:15px;

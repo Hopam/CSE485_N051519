@@ -109,9 +109,12 @@
             	<b>0 bài</b>
             </p>         
         </div>
-
+    <?php include_once "Footer.php"; ?>
 <style>
 a{color:black;}
+.footer-clean {
+    margin:50% 40px 0px 40px;
+}
 </style>
 </body>
 </html>

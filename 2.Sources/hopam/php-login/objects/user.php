@@ -317,19 +317,20 @@ function updateAccessCode(){
 
 function updateTK(){
     $this->created=date('Y-m-d H:i:s');
-    $x =$_POST['id'];
+    $x =$_POST['email'];
     // update query
     $query = "UPDATE
                 " . $this->table_name . "
             SET
                 firstname = :firstname,
                 lastname = :lastname,
+                email = :email,
                 contact_number = :contact_number,
                 access_level = :access_level,
                 access_code = :access_code,
                 created = :created
             WHERE
-                id = '$x' ";
+                email = '$x' ";
  
     // prepare the query
     $stmt = $this->conn->prepare($query);
@@ -338,6 +339,7 @@ function updateTK(){
     // $this->id=htmlspecialchars(strip_tags($this->id));
     $this->firstname=htmlspecialchars(strip_tags($this->firstname));
     $this->lastname=htmlspecialchars(strip_tags($this->lastname));
+    $this->email=htmlspecialchars(strip_tags($this->email));
     $this->contact_number=htmlspecialchars(strip_tags($this->contact_number));
     $this->access_level=htmlspecialchars(strip_tags($this->access_level));
     $this->access_code=htmlspecialchars(strip_tags($this->access_code));
@@ -347,6 +349,7 @@ function updateTK(){
     // $stmt->bindParam(':id', $this->id);
     $stmt->bindParam(':firstname', $this->firstname);
     $stmt->bindParam(':lastname', $this->lastname);
+    $stmt->bindParam(':email', $this->email);
     $stmt->bindParam(':contact_number', $this->contact_number);
     $stmt->bindParam(':access_level', $this->access_level);
     $stmt->bindParam(':access_code', $this->access_code);
@@ -366,7 +369,7 @@ function deleteTK(){
     $query = "DELETE FROM
                 " . $this->table_name . "
             WHERE
-                email = '$x' ";
+                email = '$x' and access_level='Customer' ";
  
     // prepare the query
     $stmt = $this->conn->prepare($query);

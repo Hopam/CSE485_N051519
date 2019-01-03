@@ -122,7 +122,18 @@ echo "</div>";
  
 // footer HTML and JavaScript codes
 include_once "layout_foot.php";
+include_once "../php/Footer.php";
 ?>
+<style>
+.footer-clean {
+    margin:0px 0px 60px 30px;
+}
+.col-md-3{
+  width: 24%;
+  float: left;
+  margin-bottom:40px;
+}
+</style>
 </body>
 </html>
 <!-- Username: darwin@example.com

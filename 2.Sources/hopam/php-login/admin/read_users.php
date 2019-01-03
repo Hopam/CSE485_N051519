@@ -57,10 +57,9 @@ echo "</div>";
 echo "<div class='col-md-12'>";
 
     if($_POST){
+        $user->email=$_POST['email'];
+        if($user->emailExists()){
 
-        $stmt = $user->updateTK();
-
-        $user->id=$_POST['id'];
         $user->firstname=$_POST['firstname'];
         $user->lastname=$_POST['lastname'];
         $user->contact_number=$_POST['contact_number'];
@@ -77,6 +76,14 @@ echo "<div class='col-md-12'>";
     
     }else{
         echo "<div class='alert alert-danger' role='alert'>Can't update. Please try again.</div>";
+    }
+}
+else{
+
+    echo "<div class='alert alert-danger'>";
+        echo "The user you specified is not exists. Please try again !";
+    echo "</div>";
+
     }
 }
 echo "</div>";
@@ -101,11 +108,6 @@ echo "</div>";
         <form action='read_users.php' method='post'>
 
             <table class='table table-responsive'>
-
-                <tr>
-                    <td class='width-30-percent'>ID</td>
-                    <td><input type='text' name='id' class='form-control' placeholder='ID như STT nhé !' required value="<?php echo isset($_POST['id']) ? htmlspecialchars($_POST['id'], ENT_QUOTES) : "";  ?>" /></td>
-                </tr>
         
                 <tr>
                     <td class='width-30-percent'>Tên</td>
@@ -115,6 +117,11 @@ echo "</div>";
                 <tr>
                     <td>Họ đệm </td>
                     <td><input type='text' name='lastname' class='form-control' required value="<?php echo isset($_POST['lastname']) ? htmlspecialchars($_POST['lastname'], ENT_QUOTES) : "";  ?>" /></td>
+                </tr>
+
+                <tr>
+                    <td class='width-30-percent'>Email</td>
+                    <td><input type='email' name='email' class='form-control' placeholder='Email phải giống với người dùng muốn sửa' required value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email'], ENT_QUOTES) : "";  ?>" /></td>
                 </tr>
 
                 <tr>
@@ -170,6 +177,17 @@ echo "</div>";
 <?php
 // include page footer HTML
 include_once "layout_foot.php";
+include_once "../../Song/Addsong/Footer.php"; 
 ?>
+<style>
+.footer-clean {
+    margin:20px 0px 60px 30px;
+}
+.col-md-3{
+  width: 24%;
+  float: left;
+  margin-bottom:40px;
+}
+</style>
 </body>
 </html>

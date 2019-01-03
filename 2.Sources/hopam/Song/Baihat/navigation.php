@@ -44,12 +44,10 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && $_SESSION['a
             <div id="title-bar">
             	<div class="title">
                 	<a href="../../php/Home.php" title="Bài hát" class="text-item">Bài hát</a>
-                    <a href="#" class="text-item" title="Playlist">Playlist</a>
-                    <a href="#" class="text-item" title="Hợp âm">Hợp âm</a>
+                    <a href="../../php/Playlist.php" class="text-item" title="Playlist">Playlist</a>
+                    <a href="../../php/Hopam.php" class="text-item" title="Hợp âm">Hợp âm</a>
                     <a href="../../php/Dieubaihat.php" title="Điệu bài hát" class="text-item">Điệu bài hát</a>
                     <a href="../../php/TheLoai.php" class="text-item" title="Thể loại">Thể loại</a>
-                    <a href="#" class="text-item" title="Yêu cầu hợp âm">Yêu cầu hợp âm</a>
-                    <a href="#" class="text-item" title="Thành viên">Thành viên</a>
                 </div>
             </div>  	
         </div>
@@ -70,12 +68,10 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && $_SESSION['a
             <div id="title-bar">
             	<div class="title">
                 	<a href="../../php/Home.php" title="Bài hát" class="text-item">Bài hát</a>
-                    <a href="#" class="text-item" title="Playlist" >Playlist</a>
-                    <a href="#" class="text-item" title="Hợp âm">Hợp âm</a>
+                    <a href="../../php/Playlist.php" class="text-item" title="Playlist" >Playlist</a>
+                    <a href="../../php/Hopam.php" class="text-item" title="Hợp âm">Hợp âm</a>
                     <a href="../../php/Dieubaihat.php" title="Điệu bài hát" class="text-item">Điệu bài hát</a>
                     <a href="../../php/TheLoai.php" class="text-item" title="Thể loại" >Thể loại</a>
-                    <a href="#" class="text-item" title="Yêu cầu hợp âm" >Yêu cầu hợp âm</a>
-                    <a href="#" class="text-item" title="Thành viên" >Thành viên</a>
                     
                 </div>
             </div> 

@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Điệu Ballad</title>
+    <title>Điệu Slow Rock</title>
 </head>
 <body>
 <?php
@@ -13,14 +13,14 @@ include_once "../config/core.php";
  
  
 // set page title
-$page_title = "Điệu Ballad";
+$page_title = "Điệu Slow Rock";
  
 // include page header HTML
 include_once "../Addsong/layout_head.php";
 // connect database
 $conn = mysqli_connect("localhost", "root", "", "hopambh");
 mysqli_query ($conn, 'set names UTF8');
-$sql="SELECT * FROM baihat WHERE Dieubh = 'SlowRock' or Dieubh = 'Slow rock' ";
+$sql="SELECT * FROM baihat WHERE Dieubh = N'Slow Rock' ";
 
 $result = mysqli_query($conn, $sql);
 // mysqli_set_charset($conn, 'UTF8');
@@ -40,7 +40,19 @@ if ($result) {
  
 
 ?>
+<?php
+ include_once "../Addsong/Footer.php"; 
+?>
 <style>
+.footer-clean {
+    margin:40% 0px 60px -30px;
+}
+.col-md-3{
+  width: 24%;
+  float: left;
+  margin-bottom:40px;
+}
+
 .list{
     background:#96CBF2;
     padding:15px;

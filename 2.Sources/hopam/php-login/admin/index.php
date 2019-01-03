@@ -90,7 +90,18 @@ echo "</div>";
 
    
 // include page footer HTML
-include_once 'layout_foot.php';
+include 'layout_foot.php';
+include_once "../../Song/Addsong/Footer.php";
 ?>
+<style>
+.footer-clean {
+    margin:60px 0px 60px 30px;
+}
+.col-md-3{
+  width: 24%;
+  float: left;
+  margin-bottom:40px;
+}
+</style>
 </body>
 </html>

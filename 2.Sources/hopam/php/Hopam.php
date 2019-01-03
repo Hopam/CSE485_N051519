@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Trang chủ - Hợp Âm HD - Website tra cứu hợp âm bài hát</title>
+        <title>Hợp âm</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width:device-width, initial-scare:1">
         <link rel="stylesheet" type="text/css" href="../Bootstrap/css/bootstrap.min.css.map"/>
