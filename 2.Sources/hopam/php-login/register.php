@@ -163,6 +163,9 @@ include_once "../php/Footer.php";
   float: left;
   margin-bottom:40px;
 }
+.row{
+    margin-top: 60px;
+}
 </style>
 </body>
 </html>

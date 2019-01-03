@@ -18,7 +18,7 @@ session_start();
 date_default_timezone_set('Asia/Manila');
  
 // home page url
-$home_url="http://localhost/hopam/php-login/";
+$home_url="http://localhost:81/hopam/php-login/";
  
 // page given in URL parameter, default page is one
 $page = isset($_GET['page']) ? $_GET['page'] : 1;

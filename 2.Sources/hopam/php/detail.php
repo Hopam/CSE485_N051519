@@ -58,7 +58,7 @@ include_once 'header.php';
         $replace_content = str_replace("]", "]</span>", $replace_content);
         // echo $replace_content;
         $aryLine = explode(PHP_EOL, $replace_content);
-        echo implode("<br /><br /> ", $aryLine);
+        echo implode("<br /> ", $aryLine);
         echo "</p>";
         echo " </div>";
         echo "<div id='bottom-content'>";
@@ -100,7 +100,7 @@ include_once 'header.php';
 <?php include_once "Footer.php";?>
 <style>
 .footer-clean {
-    margin:1500px 0px 60px 30px;
+    margin:1800px 0px 60px 30px;
 }
 .col-md-3{
   width: 24%;
